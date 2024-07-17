@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<head>
+  <title>Contact</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+          }
+        body {
+            font-family: Georgia, "Times New Roman", Times, serif;
+            color:rgb(255, 255, 255);
+            background-color: rgb(0, 0, 0);
+            overflow: hidden;
+            overflow-y: auto;
+          }
+          .container {
+            max-width: 90rem;
+            margin: 2rem auto;
+            padding: 0px 2rem;
+          }
+          ::-webkit-scrollbar{
+            width: 5px;
+          }
+          ::-webkit-scrollbar-thumb{
+            background: #892211;
+          }
+          .contain{
+            width: 100%;
+            overflow: hidden;
+          }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 3rem;
+            align-items: center;
+            background-color: #c792926b;
+          }
+          .logo img {
+            width: 70px;
+            height: 70px;
+            outline: 4px solid red;
+          }
+        .items {
+            display: flex;
+           /* align-items: center;*/
+            gap: 30px;
+          }
+        .items a:link {
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+          
+        .items a:hover {
+            color: red;
+        }
+        
+          .row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            justify-content: center;
+            align-items: center;
+          }
+          
+          .info {
+            display: flex;
+            flex-direction: column;
+          }
+          
+          .color{
+            font-size: 1.5rem;
+            padding: 0.2rem 5rem;
+            text-decoration-color: rgb(219, 205, 205);
+            color: rgb(219, 205, 205);
+            background: rgb(124, 27, 27);
+            border-radius: 5px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            cursor: pointer;
+            border: none;
+          }
+          
+          .color:hover {
+            background: white;
+            outline: 1px solid red;
+            color: red;
+            border: none;
+          }
+        
+          .main {
+            color: red;
+            font-size: 35px;
+            margin-bottom: 0.9rem;
+          }
+          .main2{
+            color: red;
+            font-size: 25px;
+            margin-bottom: 0.9rem;
+          }
+         
+          .para{
+            font-size: 25px;
+          }
+         
+          
+          
+        .note{
+            font-size: medium;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: #892211;
+        }
+        
+        
+        @media only screen and (max-width: 300px) {
+          .text {font-size: 11px}
+        }
+          @media only screen and (max-width: 800px) {
+            .items {
+              display: none;
+            }
+          
+            .row {
+              grid-template-columns: 1fr;
+            }
+            .learn-more {
+              align-self: start;
+              margin: 1rem 0px;
+            }
+          }
+    </style>
+    <!--<nav>
+        <link rel="stylesheet" href="Conc.css">
+        </nav>-->
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="logo2.jpeg">
+          </div>
+        <div class="items">
+            <a href="index.html"><button class=" button color">Home</button></a>
+            <a href="Events.html"><button class=" button color">Events</button></a>
+            <a href="About.html"><button class=" button color">About</button></a>
+            <!--<a href="Contact.html"></a><button class=" button color">Contact</button></a>-->
+          </div>
+        </nav>
+        <section>
+            <div class="container">
+              <div class="row">
+                <div class="info">
+                  <h1 class="main">About Fest and Contact Details</h1>
+                  <h1 class ="main2">About Fest</h1><br>
+                  <p class="para">Usharama welcomes You all for The yoUR Fest 2k24<br>
+                Here You can come and Enjoy The Fest With College and Friends..</p><br><hr><br>
+                <p class="para" >Basic Points</p><br>
+                <ul>
+                    <li>There are 9 events by CSE & AI Dept..</li>
+                    <li>Every event is a uesful Event With lot of fun.</li>
+                    <li>No entry fee for other college students</li>
+                    <li>Even anyone from College Can keep a stall and encourage our friends to participate in games</li>
+                </ul><br><br>
+                <p class="note">Note(For URCE Students):<br></p>
+                    <ol>
+                        <li>Students from CSE & AI are requestede to Coperate with the co-ordinators</li>
+                        <li>Every one should Pay a Rs.100 for Brach banner.Is's a request</li>
+                </ol> <br><br>
+                    <p class="note">Note(For other college Students):<br></p>
+                    <ol>
+                        <li>Come with Your College ID card</li>
+                        <li>Enjoy the Fest Without any problem</li>
+                </ol> 
+          <br><hr><br><hr><br>
+          <h1 class ="main2">Contact Details(CES & AI Dept)</h1><br>
+          <P class="note">Faculty Co-Ordinator of CSE & AI</P><br>
+          <P class="para">Dr. B. V. Praveen Kumar ---- Associate Professor -(9160923988)</P><br>
+          <P class="note">Students Co-Ordinator of CSE & AI</P><br>
+          <P class="para">K. M.V. Rama Krishna ---- CSE-B 3rd Year -- 21NG1A0585-(9502991839)</P><br>
+          <P class="para">K. Pushkara Sai Vardhan ---- CSE-B 3rd Year -- 21NG1A0579-(7842770553)</P>
+</div>                 
+          </section>
+          
+            
+</body>
+</html>

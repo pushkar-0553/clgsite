@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+      box-sizing: border-box;
+    }
+  body {
+      font-family: Georgia, "Times New Roman", Times, serif;
+      color:rgb(250, 250, 250);
+      background:#000000;
+      overflow-y: auto;
+    }
+    ::-webkit-scrollbar{
+      width: 5px;
+    }
+    ::-webkit-scrollbar-thumb{
+      background: #892211;
+    }
+    .container {
+      max-width: 90rem;
+      /*margin: 2rem auto;*/
+      padding: 0px 2rem;
+      margin-top: 50px;
+
+    }
+  nav {
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem 3rem;
+      align-items: center;
+      background-color:#c792926b;
+    }
+    .logo img {
+      width: 70px;
+      height: 70px;
+      outline: 4px solid red;
+    }
+  .items {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    
+    }
+  .items a:link {
+      text-decoration: none;
+      font-size: 1.5rem;
+      font-weight: bold;
+  }
+    
+  .items a:hover {
+      color: red;
+  }
+  .hero-heading {
+      font-size: 2rem;
+      margin-bottom: 0.3rem;
+      color:red
+    }
+    .hero-sub-heading {
+      font-size: 1rem;
+      opacity: 0.7;
+      margin-bottom: 0.9rem;
+    }
+    .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .info {
+      display: flex;
+      flex-direction: column;
+    }
+    .video{
+      border-radius: 20px;
+      margin-left: 5px;
+    }
+    .button{
+      font-size: 1.5rem;
+      padding: 0.2rem 5rem;
+      text-decoration-color: rgb(219, 205, 205);
+      color: rgb(219, 205, 205);
+      background: rgb(124, 27, 27);
+      border-radius: 5px;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      cursor: pointer;
+      border: none;
+    }
+    
+    .button:hover {
+      background: white;
+      outline: 1px solid red;
+      color: red;
+      border: none;
+    }
+    .main {
+      color: rgb(255, 255, 255);
+      font-size: 2.5rem;
+      margin-bottom: 0.9rem;
+    }
+    .left-log{
+      
+             position: absolute; /* Absolute positioning */
+             top: 170px;             /* Align to the top */
+             right: 600px;           /* Align to the right */
+             width: 100px;       /* Example width */
+             height: auto;
+             /*padding-right: 50px;*/
+    }
+    /* Adjust video dimensions for responsiveness within .video-control */
+.video-control video {
+  width: 100%; /* Set width to 100% of its container */
+  height: auto; /* Allow height to adjust proportionally */
+  max-width: 100%; /* Set maximum width to 100% */
+  display: block; /* Ensure block-level display */
+  margin-left: auto; /* Auto left margin for center alignment */
+  margin-right: auto; /* Auto right margin for center alignment */
+}
+
+#engineer{
+  background-color: rgba(240, 104, 104, 0.723);
+  right: 500px;
+  border-radius: 20px;
+  margin-left: 70px;
+  margin-right: 300px;
+  height: 0;
+  opacity: 0; 
+  overflow: hidden;
+  border: 1px solid black;
+  padding: 20px;
+  margin-top: 20px;
+    transition: opacity 0.5s, height 0.5s;
+}
+#engineer.visible {
+  opacity: 1;
+  height: auto;  /* Set to auto height when visible */
+}
+@media only screen and (max-width: 1200px) {
+  .container {
+    padding: 0 1rem;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .items {
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+  }
+  .logo img {
+    width: 50%;
+    height: 50%;
+  }
+  .left-log {
+    position: relative;
+    margin: 20px auto;
+    text-align: center;
+    right: auto;
+    width: auto;
+  }
+  .video-control video {
+    width: 100%;
+    height: auto;
+  }
+}
+
+  </style>
+    
+</head>
+<body>
+    <nav>
+    <div class="logo">
+        <img src="logo2.jpeg">
+      </div>
+    <div class="items">
+        <!--<a href="index1.html"><button class=" button color">Home</button></a>-->
+        <a href="Events.html"><button class=" button color">Events</button></a>
+        <a href="About.html"><button class=" button color">About</button></a>
+        <a href="Conc.html"><button class=" button color">Contact</button></a>
+      </div>
+    </nav>
+    <section>
+        <div class="container">
+          <div class="row">
+            <div class="info">
+              <h1 class="main">UshaRama College Of Engineering And Technology</h1>
+                <h2 class="hero-heading">Department of CSE and AI</h2>
+              <p class="hero-sub-heading">presenting you the College Fest of UshaRama College Of Engineering And Technology</p>
+            </div>
+            <div class="left-log">
+              <img src="3 in 1 logo.png" width="700" height="150"></div>
+          </div></div>
+          <center><button onclick="toggleDiv()" class=" button color">Engineer ka Maha Sangram</button></center>
+          <div id="engineer">
+            <h1><center>Engineer ka Maha Sangram</center></h1>
+            <p>UshaRama invits everyone to the one of the most auspicious Event<span style="font-size: larger;"> Engineer Ka Maha Sangram</span></p><br>
+            <p>It has phases and rounds</p><br>
+            <h3>Phase 1(All students):</h3><br>
+            <p> Online exam -30 Minutes,30 Mutiple choice questions</p><br>
+            <h3>Phase 2(20 Studenta):</h3><br>
+            <p>Answers should be in written in the given sheet.</p>
+            <p>Round-1: Basic knowledge in Engineering(10 questions scrolls on board)&nbsp;&nbsp; 10 Marks </p>
+            <p>Round-2: Logos(5 Each displayed for 30 seconds)&nbsp;&nbsp;&nbsp;&nbsp; 5 Marks</p>
+            <p>Round-3: Taglines(5 Each displayed for 30 seconds)&nbsp;&nbsp;&nbsp;&nbsp; 5 Marks</p>
+            <p>Round-4: Skill round(5-Questions, Each displayed for 60 seconds)&nbsp;&nbsp; 10 Marks</p>
+            <p>Round-5: Observations on a page(Displayed for 5 minutes and then 10 oral questions) 10 Marks</p><br>
+            <h3>Phase-3(10 Students):</h3><br>
+            <p>Round-1: Group Discussion&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10 Marks</p>
+            <p>Round-2: Technical Round&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10 Marks</p>
+            <p>Round-3: HR Round&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10 Marks</p><br>
+            <h3>Phase-4(5 Students): 50 i-response questions.(This will be conducted on 6th Jan'24)</h3>
+            <h4>For each i-respond question:</h4>
+            <p>1.Correct Answer & 1st responds:  &nbsp;4 marks</p>
+            <p>2.Correct Answer & 2nd responds:  &nbsp;3 marks</p>
+            <p>3.Correct Answer & 3rd responds:  &nbsp;2 marks</p>      
+            <p>4.Correct Answer & 4th responds:  &nbsp;1 marks</p>
+            <p>5.Correct Answer & 5th responds:  &nbsp;0 marks</p>
+            <p>6.No responds:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-1 marks</p>
+            <p>Wrong answer &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:-2 marks</p><br>
+            <h3>Note:</h3>
+            <p>Cumulative Scores are displayed after each i-resspond question.<br>Time taken by inndividual respondent for each question will be showed on request.</p><br>
+            <h3>PRIZE:</h3>
+            <P>One Lakh Rupees(1st price:Rs 50,000 ,2nd price: Rs 25,000 , 3rd price: Rs 15,000 ,<br>4th and 5th each price: Rs 5,000 , will be given on 6th Jan'24 in price distribution function.)</P><br>
+            <h3>NOTE:</h3>
+            <p>Multiple choice questions will be given in Phase-1 and Phase-4. <br>These are from General Knowledge, Apitute, Puzzels, Reasoning, English, Mathematics, Physice, Chemistry, Basics in <br>Computers, Electrical, Electronics, Civil and Mechanics and are at 1st B.Tech standard</p><br>
+            <h3><b>For futher details contact: </b>Ph.9177412255, email: viceprincipal@UshaRama.in</h3>
+              </div>
+            <div class="video-control">
+                <video autoplay width="1900" height="800"  loop>
+                    <source src="v1.mp4" type="video/mp4">
+                  </video>
+          </div>
+
+          
+          
+      </section>
+</body>
+<script> function toggleDiv() {
+  var div = document.getElementById("engineer");
+  div.classList.toggle('visible');
+}</script>
+</html>

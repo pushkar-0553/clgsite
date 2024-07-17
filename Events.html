@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<head>
+  <title>Events</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+          }
+        body {
+            font-family: Georgia, "Times New Roman", Times, serif;
+            color: white;
+            background-color: black;
+          }
+          .topic{
+            background-color: #000000;
+            padding: 20px;
+            width: 70%;
+            float: left;
+            margin-left:auto;
+            overflow-y: scroll;
+            overflow: hidden;
+            
+        }
+           ::-webkit-scrollbar{
+            width: 5px;
+          }
+          ::-webkit-scrollbar-thumb{
+            background: #892211;
+          }
+          .container {
+            max-width: 90rem;
+            margin: 2rem auto;
+            padding: 0px 2rem;
+          }
+          .contain{
+            width: 100%;
+            overflow: hidden;
+          }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 3rem;
+            align-items: center;
+            background-color: #c792926b;
+          }
+          .logo img {
+            width: 70px;
+            height: 70px;
+            outline: 4px solid red;
+          }
+        .items {
+            display: flex;
+           /* align-items: center;*/
+            gap: 30px;
+          }
+        .items a:link {
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+          
+        .items a:hover {
+            color: red;
+        }
+        .hero-heading {
+            font-size: 3rem;
+            margin-bottom: 0.3rem;
+          }
+          .hero-sub-heading {
+            font-size: 1rem;
+            opacity: 0.7;
+          }
+          .row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            justify-content: center;
+            align-items: center;
+          }
+          
+          .info {
+            display: flex;
+            flex-direction: column;
+          }
+          
+          .color{
+            font-size: 1.5rem;
+            padding: 0.2rem 5rem;
+            text-decoration-color: rgb(219, 205, 205);
+            color: rgb(219, 205, 205);
+            background: rgb(124, 27, 27);
+            border-radius: 5px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            cursor: pointer;
+            border: none;
+          }
+          
+          .color:hover {
+            background: white;
+            outline: 1px solid red;
+            color: red;
+            border: none;
+          }
+        .list{
+        
+            background-color:inherit;
+            color: rgb(255, 255, 255);
+            padding: 10px;
+            border: #000000;
+           }
+          .main {
+            color: red;
+            font-size: 1.5rem;
+            margin-bottom: 0.9rem;
+          }
+          .left{
+            width: 15%;
+            margin-right: auto;
+            height: 100%;
+            padding: 20px;
+            float: left;
+            box-sizing: border-box;
+            background: linear-gradient(to right,#892211, #000000);
+          }
+          .list_size{
+            font-size: larger;
+            padding: 10px;
+          }
+          .para{
+            font-size: 15px;
+          }
+          .heading_e{
+                color: red;
+                font-size: 25px;
+                margin-bottom: 0.9rem;
+                background-color:inherit;
+                padding: 10px;
+                border: #000000;
+              }
+          #marquee{
+            color:#1ddff1;
+            background-color:inherit;
+            padding: 10px;
+            border-radius: 20px;
+          }
+              #event1{
+                background-color: rgba(240, 104, 104, 0.723);
+                right: 500px;
+                border-radius: 20px;
+                margin-left: 70px;
+                margin-right: 300px;
+                height: 0;
+                opacity: 0; 
+                overflow: hidden;
+                border: 1px solid black;
+                padding: 20px;
+                margin-top: 20px;
+                  transition: opacity 0.5s, height 0.5s;
+              }
+              #event1.visible {
+                opacity: 1;
+                height: auto;  /* Set to auto height when visible */
+              }
+              #event2{
+                background-color: rgba(240, 104, 104, 0.723);
+                right: 500px;
+                border-radius: 20px;
+                margin-left: 70px;
+                margin-right: 300px;
+                height: 0;
+                opacity: 0; 
+                overflow: hidden;
+                border: 1px solid black;
+                padding: 20px;
+                margin-top: 20px;
+                  transition: opacity 0.5s, height 0.5s;
+              }
+              #event2.visible {
+                opacity: 1;
+                height: auto;  /* Set to auto height when visible */
+              }
+              #event3{
+                background-color: rgba(240, 104, 104, 0.723);
+                right: 500px;
+                border-radius: 20px;
+                margin-left: 70px;
+                margin-right: 300px;
+                height: 0;
+                opacity: 0; 
+                overflow: hidden;
+                border: 1px solid black;
+                padding: 20px;
+                margin-top: 20px;
+                  transition: opacity 0.5s, height 0.5s;
+              }
+              #event3.visible {
+                opacity: 1;
+                height: auto;  /* Set to auto height when visible */
+              }
+              #event4{
+                background-color: rgba(240, 104, 104, 0.723);
+                right: 500px;
+                border-radius: 20px;
+                margin-left: 70px;
+                margin-right: 300px;
+                height: 0;
+                opacity: 0; 
+                overflow: hidden;
+                border: 1px solid black;
+                padding: 20px;
+                margin-top: 20px;
+                  transition: opacity 0.5s, height 0.5s;
+              }
+              #event4.visible {
+                opacity: 1;
+                height: auto;  /* Set to auto height when visible */
+              }
+              #event5{
+                background-color: rgba(240, 104, 104, 0.723);
+                right: 500px;
+                border-radius: 20px;
+                margin-left: 70px;
+                margin-right: 300px;
+                height: 0;
+                opacity: 0; 
+                overflow: hidden;
+                border: 1px solid black;
+                padding: 20px;
+                margin-top: 20px;
+                  transition: opacity 0.5s, height 0.5s;
+              }
+              #event5.visible {
+                opacity: 1;
+                height: auto;  /* Set to auto height when visible */
+              }
+              #event6{
+                background-color: rgba(240, 104, 104, 0.723);
+                right: 500px;
+                border-radius: 20px;
+                margin-left: 70px;
+                margin-right: 300px;
+                height: 0;
+                opacity: 0; 
+                overflow: hidden;
+                border: 1px solid black;
+                padding: 20px;
+                margin-top: 20px;
+                  transition: opacity 0.5s, height 0.5s;
+              }
+              #event6.visible {
+                opacity: 1;
+                height: auto;  /* Set to auto height when visible */
+              }
+              #event7{
+                background-color: rgba(240, 104, 104, 0.723);
+                right: 500px;
+                border-radius: 20px;
+                margin-left: 70px;
+                margin-right: 300px;
+                height: 0;
+                opacity: 0; 
+                overflow: hidden;
+                border: 1px solid black;
+                padding: 20px;
+                margin-top: 20px;
+                  transition: opacity 0.5s, height 0.5s;
+              }
+              #event7.visible {
+                opacity: 1;
+                height: auto;  /* Set to auto height when visible */
+              }
+              #event8{
+                background-color: rgba(240, 104, 104, 0.723);
+                right: 500px;
+                border-radius: 20px;
+                margin-left: 70px;
+                margin-right: 300px;
+                height: 0;
+                opacity: 0; 
+                overflow: hidden;
+                border: 1px solid black;
+                padding: 20px;
+                margin-top: 20px;
+                  transition: opacity 0.5s, height 0.5s;
+              }
+              #event8.visible {
+                opacity: 1;
+                height: auto;  /* Set to auto height when visible */
+              }
+              #event9{
+                background-color: rgba(240, 104, 104, 0.723);
+                right: 500px;
+                border-radius: 20px;
+                margin-left: 70px;
+                margin-right: 300px;
+                height: 0;
+                opacity: 0; 
+                overflow: hidden;
+                border: 1px solid black;
+                padding: 20px;
+                margin-top: 20px;
+                  transition: opacity 0.5s, height 0.5s;
+              }
+              #event9.visible {
+                opacity: 1;
+                height: auto;  /* Set to auto height when visible */
+              }
+          @media only screen and (max-width: 800px) {
+            .items {
+              display: none;
+            }
+          
+            .row {
+              grid-template-columns: 1fr;
+            }
+           
+          }
+    </style>
+ <!--<nav><link rel="stylesheet" href="Events.css"></nav>-->
+
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="logo2.jpeg">
+          </div>
+        <div class="items">
+            <a href="index.html"><button class="color">Home</button></a>
+            <!--<a href="Events.html"><button class=" button color">Events</button></a>-->
+            <a href="About.html"><button class="color">About</button></a>
+            <a href="Conc.html"><button class="color">Contact</button></a>
+          </div>
+        </nav>
+        <section class="events">
+            <div class="container">
+                <div class="row">
+                  <div class="info">
+                    <h1 class="main">Department of CSE and AI</h1>
+                    <h2 class="hero-heading">Events.</h2>
+                    <p class="hero-sub-heading">presenting you the College Fest of UshaRama College Of Engineering And Technology</p>
+                  </div>
+                </div>
+            </div>
+            <marquee id="marquee" behavior="alternate" direction="right" scrollamount="5">Please click on the Name of the event for futher information.Thank u</marquee>
+        <div class="contain">
+            <div class="left">
+                <h2>Events list</h2><br>
+                <button onclick="scrollPage()" class=" list"><p class="list_size">Crypt ur Mind</p></button>
+                <button onclick="scrollPage()" class=" list"><p class="list_size">Cross Word Puzzles</p></button>
+                <button onclick="scrollPage()" class=" list"><p class="list_size">Technical Quiz</p></button>
+                <button onclick="scrollPage(900)" class=" list"><p class="list_size">Google Masters</p></button>
+                <button onclick="scrollPage(1200)" class=" list"><p class="list_size">Code Royal</p></button>
+                <button onclick="scrollPage(1500)" class=" list"><p class="list_size">Know Your PC</p></button>
+                <button onclick="scrollPage(1800)" class=" list"><p class="list_size">Technical Jam</p></button><br>
+                <button onclick="scrollPage(2100)" class=" list"><p class="list_size">Line Up</p></button>
+                <button onclick="scrollPage(2400)" class=" list"><p class="list_size">Minute To Win It</p></button>
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                <button onclick="scrollPage(-2400)" class=" list"><p class="list_size">Scroll Up</p></button>
+                
+        
+    </div>
+    <div class="topic">
+      <button class="heading_e" onclick="toggleDiv('event1')"><h1 class="heading_e">Crypt Your Mind</h1></button>
+        <p class="para">-K.Bhavani--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Faculty Co-Ordinator<br>Contact-- &nbsp;&nbsp;(7659021202)</p><br>
+        <p class="para">-G. Sravan  22NG1A0518--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student Co-Ordinator<br>Contact-- &nbsp;&nbsp;(7702096239)</p><br>
+        <p class="para">-B. Vinay  22NG1A0507--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student Co-Ordinator</p><br>
+        <p class="para">-Sk. Jafar  22NG1A05C3--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student Co-Ordinator</p><br>
+        <p class="para">-B. Pujitha  22NG1A0571--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student Co-Ordinator</p><br>
+        <div id="event1">
+          <h3><b>Level-1:LOGICAL</b></h3>
+          <P>Here the questions itself have the answers.Only you have to identify right answer from it....</P><br>
+          <h3><b>Level-2:PRATICAL</b></h3>
+          <P>In this level, the questions are given by critical funny questions .You should think pratically and answer them<br>Here in this level there's is time limit of 10 minuits is given.</P><br>
+        </div><hr><br>
+       <button class="heading_e" onclick="toggleDiv('event2')"><h1 class="heading_e">Cross Word Puzzles</h1></button>
+        <p class="para">-P.Bhagya Sri--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Faculty Co-Ordinator<br>Contact-- &nbsp;&nbsp;(9494439398)</p><br>
+        <p class="para">-Md. Adnan Shafi  22NG1A5437--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student Co-Ordinator<br>Contact-- &nbsp;&nbsp;(9381242547)</p><br>
+        <p class="para">-P. Vennela  22NG1A5448--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student Co-Ordinator</p><br>
+        <p class="para">-N. Jaya Sri--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student Co-Ordinator</p><br>
+        <p class="para">-P. J. V. S. Sai Ram--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student Co-Ordinator</p>
+        <div id="event2">
+          <p>-Aim: To find the Tech terms from the Given crossword puzzle</p><br>
+          <h3><b>Rules and Regulations</b></h3>
+          <p>Organized with TWO ROUNDS</p><br>
+          <h3><b>ROUND 1:</b></h3>
+          <P>A puzzle with 15-20 questions is provided. You are asked to answer them in 20 minuits of<br>time 1 mmark for correct response.</P>
+          <p><b>Top 25 are selected for Round 2</b></p>
+          <h3><b>ROUND 2:</b></h3><br>
+          <P>A few questions are provided for word challenge. Asked to answer them in 15 minutes<br>of time.2 marks for each approx.correct response</P>
+          <h3><b>Awarding Criterion:</b></h3>
+          <p>Based on the above rules and factors,the top contestant with fastest solving skills,,<br>will be entitled as winner!!</p>
+        </div><br><hr><br>
+        <button class="heading_e" onclick="toggleDiv('event3')"><h1 class="heading_e">Technical Quiz</h1></button>
+        <p class="para">-Ch.Phani Kumar--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Faculty Co-Ordinator<br>Contact-- &nbsp;&nbsp;(9347226667)</p><br>
+        <p class="para">-Sk.Tajuddin  21NG1A05B3--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student Co-Ordinator<br>Contact-- &nbsp;&nbsp;(9848610708)</p><br>
+        <p class="para">-N. Alekhya  21NG1A0539--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student Co-Ordinator</p><br>
+        <p class="para">-P. Ramya  21NG1A0549--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student Co-Ordinator</p><br>
+        <p class="para">-S. Sindhuja  21NG1A0550--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student Co-Ordinator</p><br>
+        <div id="event3">
+        <h3><b>Round-1:Generalized Quiz</b></h3>
+        <p>Generalized Quiz with twenty questions, each worth 20 marks (MCQs)</p>
+      <br>
+      <h3><b>Round 2: Display Quiz</b></h3>
+      <p> Each question is worth 10 marks (10 questions). If not answered, questions will be awarded 5 marks.
+      </p><br>
+      <h3><b>Round 3: Technical Logos</b></h3>
+      <p> Technical logos will be displayed, and participants must explain the theme. (This is a buzzer round.)
+      </p><br>
+      <h3><b>Round 4: Technical Missing Words</b></h3>
+      <p>Some technology words will be displayed with missing letters.</p><br>
+      <h3><b>
+        Round 5: Image Identification</b></h3>
+        <p> Identify the CEO in the image and determine the company he/she belong to.</p>
+        </div><br><hr><br>
+        <button class="heading_e" onclick="toggleDiv('event4')"><h1 class="heading_e">Google Masters</h1></button>
+        <p class="para">-T. Naga Monika  --&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Faculty Co-Ordinator<br>Contact-- &nbsp;&nbsp;(9490903578)</p><br>
+        <p class="para">-K. Aakarsh --&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student Co-Ordinator<br>Contact-- &nbsp;&nbsp;(9398351895)</p><br>
+        <p class="para">-M. Yuvaraju--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student Co-Ordinator</p><br>
+        <p class="para">-Md. Suleman--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student Co-Ordinator</p><br>
+        <p class="para">-Ch. Veda Likitha--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student Co-Ordinator</p><br>
+        <div id="event4">
+          <h3><b>Introdoction:</b></h3>
+          <p>This event is designed to test participants' ability to quickly find <br>and verify information using Google, thereby enhancing their research and problem-solving skills</p><br>
+          <h3><b>Round-1:</b></h3>
+          <p>"Search the Answer", involves answering 40 questons in 40 mnutes using Google.<br>The best performers proceed to Round 2</p><br>
+          <h3><b>Round-2:</b></h3>
+          <p>"Fastest Finger First(FFF)", where they must find and answer a dictated question on Google asa quickly as possible.</p><br>
+          <h3><b>Awarding Criterion:</b></h3>
+          <p>The top three participant receive prizes, and all participants receive certificates.</p>
+
+        </div><br><hr><br>
+        <button class="heading_e" onclick="toggleDiv('event5')"><h1 class="heading_e">Code Royal</h1></button>
+        <p class="para">-V. Sandhya--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Faculty Co-Ordinator<br>Contact-- &nbsp;&nbsp;(8247480101)</p><br>
+        <p class="para">-Sai chandhu--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student Co-Ordinator<br>Contact-- &nbsp;&nbsp;(7032358676)</p><br>
+        <p class="para">-Spandana--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student Co-Ordinator</p><br>
+        <p class="para">-Sahithi--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student Co-Ordinator</p><br>
+        <p class="para">-Hari Krishna--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student Co-Ordinator</p>
+        <div id="event5">
+          <h3><b>Level-1:WRAP THE CODE</b></h3>
+              <p>Aim will be given to you. you have to write the code  in your preferred language ( C or PYTHON).,<br>   
+                Hints will be given for you . <br>
+                The participants who completes the execution and displays the output faster  will be qualified to next level
+                </p><br>
+          <h3><b>Level-2:DEBUG THE CODE</b></h3>
+          <p>the code will be given to you in programming language (C OR PYTHON) <br>you have to find the errors ,if necessary you need to add or delete the code and modify them.</p>     
+        </div><br><hr><br>
+        <button class="heading_e" onclick="toggleDiv('event6')"><h1 class="heading_e">Know your PC</h1></button>
+        <p class="para">-M.Chanti Babu--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Faculty Co-Ordinator<br>Contact-- &nbsp;&nbsp;(8247480101)</p><br>
+        <p class="para">-J. Deepthi  22NG1A05A0--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student Co-Ordinator<br>Contact-- &nbsp;&nbsp;(**********)</p><br>
+        <p class="para">-Ch. Manaswi  22NG1A0586--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student Co-Ordinator</p><br>
+        <p class="para">-G.V. Ramya  22NG1A0593--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student Co-Ordinator</p><br>
+        <p class="para">-J. Lakshmi Anushya  22NG1A0597--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student Co-Ordinator</p><br>
+        <div id="event6">
+        <h3><b>Level 1:-</b></h3>
+        <p>Answer the given questios without mouse by using<br> 
+          keyboard shortcuts.In this level there are 10 questions.For <br>
+          each question 1minute time is given.The best performers<br>
+          are proceed to level 2
+          </p><br>
+          <h3><b>Level 2:-</b></h3>
+          <p> Same as level 1.The best performers are proceed to level 3
+            </p><br>
+            <h3><b>Level 3:-</b></h3>
+          <p>  Same as level 1.But in this level there will be 5 questions.
+            </p><br>
+            <h3><b>Awarding Criterion:</b></h3>
+          <p> The top two participants receive prizes, 
+            and all participants receive certificates.
+            </p><br>
+        </div><br><hr><br>
+        <button class="heading_e" onclick="toggleDiv('event7')"><h1 class="heading_e">Technical Jam</h1></button>
+        <p class="para">-S. Gogula Priya--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Faculty Co-Ordinator<br>Contact-- &nbsp;&nbsp;(8608606063)</p><br>
+        <p class="para">-N. Jayanth Kumar  21NG1A05A1--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student Co-Ordinator<br>Contact-- &nbsp;&nbsp;(9063598099)</p><br>
+        <p class="para">-Y. Vemalatha  21NG1A05C3--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student Co-Ordinator</p><br>
+        <p class="para">-L. Somwya  21NG1A--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student Co-Ordinator</p><br>
+        <p class="para">-J. Danush  22NG5A0507--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student Co-Ordinator</p><br>
+        <div id="event7">
+        <h3><b>Just a Minute</b></h3><br>
+        <h3><b>Rules:</b></h3>
+        <ul>
+          <li> Only registered candidates are eligible to participate.</li>
+          <li> All the rounds are provided with a limited time.</li>
+        </ul><br>
+        <h3><b>Round 1:GENERAL ROUND</b></h3>
+        <P><ul><li>First a song will be played and then same song will be repeated .</li>
+        <li> here, the song will be stopped in the middle then the participant have to 
+          complete the next few lines of the song from the spot.</li></ul></p>  <br>
+        <h3><b>Round 2:TECHNICAL ROUND</b></h3>
+        <P><ul><li>A collection of topics are noted down on some chits(a 
+          piece of paper)</li><li>then the participant have to select a chit randomly from the bowl</li> 
+          <li>Then he/she should give a speech on the topic that he has selected is about 2-3 
+          minutes and after this part then,</li><li> In a same manner the next part is like mono 
+          action here a team contains 2 members, one for acting and one for guessing</li>
+          <li>Top speaker will be the winner</li></ul></P>
+
+        </div><hr><br>
+        <button class="heading_e" onclick="toggleDiv('event8')"><h1 class="heading_e">Line Up</h1></button>
+        <p class="para">-B. Sowmya--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Faculty Co-Ordinator<br>Contact-- &nbsp;&nbsp;(6281016866)</p><br>
+        <p class="para">-K. Seshu  21NG1A0521--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student Co-Ordinator<br>Contact-- &nbsp;&nbsp;(9491461342)</p><br>
+        <p class="para">-Md. Ayaan --&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student Co-Ordinator</p><br>
+        <p class="para">-U. Rohini  21NG1A0559--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student Co-Ordinator</p><br>
+        <p class="para">-N. Abhinaya  21NG1A0541--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student Co-Ordinator</p><br>
+        <div id="event8">
+        <h3><b>Level-1:BITWISE BATTLE</b></h3>
+        <P>random basic questions of your core subjects or some basic reasoning questions will be given in chits<BR> you have to pick any one question and solve it
+        </P><br>
+        <h3><b>Level-2:TEAM DIALOGUE</b></h3>
+        <p>Group discussion round<br>
+          General topics will be given 10 mins Debate should be given.</p>
+          <br>
+        <h3><b>Level-3:HR FLIMSY</b></h3>
+        <p>Staff coordinators will be taking interview about your self (basic questions will be asked)</p>
+        
+        </div><hr><br>
+        <button class="heading_e" onclick="toggleDiv('event9')"><h1 class="heading_e">Minute to Win it</h1></button>
+        <p class="para">-M. Chaitanya--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Faculty Co-Ordinator<br>Contact-- &nbsp;&nbsp;(9177888767)</p><br>
+        <p class="para">-T. UdayKrishna--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student Co-Ordinator<br>Contact-- &nbsp;&nbsp;(9912875812)</p><br>
+        <p class="para">-G. Mani Kanta  22NG1A0521--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student Co-Ordinator</p><br>
+        <p class="para">-T. Narendra  22NG1A0510--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student Co-Ordinator</p><br>
+        <p class="para">-P. Mahi  22NG1A05C1--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student Co-Ordinator</p><br>
+        <div id="event9">
+        <h3><b>Round-1: LOGO DETECTION</b></h3>
+        <P>Detecting the logos of various companies and various domains related to the technology and software development.<br>Every one have to recognize the more number of logos in one minute to win.</P>
+        <br>
+        <h3><b>Round-2:TECH TRIVIA</b></h3>
+        <p>Tech trivia involves interesting and often lesser-known facts from the<br> 
+          world of technology. Tech trivia can spark curiosity and highlight the <br>
+          rapid evolution of the tech industry. It's a fun way for enthusiasts and <br>
+          professionals alike to choose the correct answer given in the questions by 
+          provided options.</p><br>
+          <h3><b>Round-3:PING PONG BALL</b></h3>
+          <p>Using a ping pong ball in a technical event can be an interesting and <br>
+            creative way to incorporate hands-on activities or challenges related to <br>
+            physics, engineering, or even programming.Throw the ball in any cup to <br>
+            chose their own task.Tasks are:<br>
+            <h4><b>1.Code Karaoke</b></h4><br>
+            Participants present a snippet of code as if they were performing <br>
+            karaoke, explaining its purpose and functionality in one minute.<br>
+            <h4><b>2.Algorithm Balancing Act</b></h4><br>
+            Balancing a set of cards algorithmically usually refers to arranging a <br>
+            sequence of cards in such a way that they follow specific rules or <br>
+            conditions. Below is a simple algorithmic task related to balancing cards<br>
+            <h4><b>3.Tech Charade</b></h4><br>
+             Participants act out technical terms or concepts, and others must guess <br>
+            what they're illustrating within a minute.<br>
+            <h4><b>4.Tech Puzzle</b></h4><br>
+             Combination of tech photos to find out the word<br></p>
+        </div><hr><br>
+
+    </div></div>
+            
+        </section>
+
+        <script>
+            function scrollPage(offset) {
+                // Get the current vertical scroll position
+                var currentPosition = window.scrollY || document.documentElement.scrollTop;
+    
+                // Calculate the new position after scrolling
+                var newPosition = currentPosition + offset;
+    
+                // Scroll the page to the new position
+                window.scrollTo({
+                    top: newPosition,
+                    behavior: 'smooth' // Add smooth scrolling effect
+                });
+            }
+            function toggleDiv(divId) {
+              var div = document.getElementById(divId);
+              if (div.style.display === "none" || div.style.display === "") {
+                  div.style.display = "block";
+                  div.classList.toggle('visible');
+              } else {
+                  div.style.display = "none";
+              }
+          }</script>
+</body>
+</html>
